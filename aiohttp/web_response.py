@@ -737,7 +737,7 @@ def json_response(
         if text or body:
             raise ValueError("only one of data, text, or body should be specified")
         else:
-            text = dumps(data)
+            text = dumps(data, default=str)
     return Response(
         text=text,
         body=body,
